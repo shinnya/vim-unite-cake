@@ -43,7 +43,7 @@ let s:source_command = {}
 
 
 function! unite#sources#cake#define()
-  return map(s:places ,
+  return map(deepcopy(s:places),
         \   'extend(copy(s:source),
         \    extend(v:val, {"name": "cake/" . v:val.name,
         \   "description": "candidates from history of " . v:val.name}))')
